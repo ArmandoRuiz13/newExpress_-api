@@ -28,9 +28,16 @@ app.get('/v1/explorers/:id',(req,res) => {
 app.post('/v1/explorers',(req,res) => {
     console.log(`Api explorers POST request ${new Date()}`)
     const requestBody = req.body // Parametros de un cliente
-    // HTTP CODE STATUS: 201, por ser post
+    // HTTP CODE STATUS: 201, por ser post tambien se puede con put pero no es lo correcto
     console.log(req.body)
     res.status(201).json({message:"Created"})
+})
+app.put('/v1/explorers/:id',(req,res) => {
+    console.log(`Api explorers POST request ${new Date()}`)
+    const requestBody = req.body // Parametros de un cliente
+    // HTTP CODE STATUS: 200 para put es lo correcto
+    console.log(req.body)
+    res.status(200).json({message:"Updated!"})
 })
 // Con esto inicializamos esta app
 app.listen(port, () => {
