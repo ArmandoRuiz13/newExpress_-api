@@ -12,9 +12,18 @@ app.get('/v1/explorers',(req,res) => {
     console.log(`Get explorers V1 API ${new Date()}`)
     const explorer1 = {id: 1, name: "Explorer1"}
     const explorer2 = {id: 2, name: "Explorer2"}
-    const explorers = [explorer1, explorer2]
+    const explorer3 = {id: 3, name: "Explorer3"}
+    const explorer4 = {id: 4, name: "Explorer4"}
+    const explorers = [explorer1, explorer2,explorer3,explorer4]
     // HTTP CODE STATUS: 200
     res.status(200).json(explorers)
+})
+app.get('/v1/explorers/:id',(req,res) => {
+    console.log(`Get explorers V1 API ${new Date()}`)
+    console.log(`Getting explorer with id ${req.params.id}`)
+    const explorer1 = {id: 1, name: "Explorer1"}
+    // HTTP CODE STATUS: 200
+    res.status(200).json(explorer1)
 })
 // Con esto inicializamos esta app
 app.listen(port, () => {
